@@ -1,0 +1,16 @@
+#! /bin/bash
+
+if [ "$1" == "stop" ]; then
+  killall iwatch
+  exit
+fi
+
+iwatch -r -e close_write -t 'README.md' -X 'build|.git|.pub' \
+-c "./scripts/do_readme" . & # >/dev/null 2>&1 &
+
+iwatch -r -e close_write -t '^.*\.scss' -X 'build|.git|.pub' \
+-c "./scripts/do_sass %f" . & # >/dev/null 2>&1 &
+
+echo watching .
+
+

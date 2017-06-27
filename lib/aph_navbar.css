@@ -1,0 +1,14 @@
+.aph-navbar { width:100%; padding:0.3em 0.5em; font-size:1.5rem; 
+              background:black; color:white;
+              font-family:"Pontano Sans"; font-weight:200}
+@media only screen and ( max-width: 992px ) {
+  .aph-navbar { font-family:inherit; font-size:1.2rem; }
+}
+.aph-navbar::after { content:""; display:block; clear:both; }
+.aph-navbar a,.aph-navbar a:visited {color:inherit;text-decoration:none}
+.aph-navbar a:hover {text-decoration:none; }
+.aph-navitem {margin:0 0.25em;}
+.aph-navspanner { width:100%; }
+.aph-navgroup-left { float:left; }
+.aph-navgroup-right {float:right; }
+.aph-action { cursor:pointer; }

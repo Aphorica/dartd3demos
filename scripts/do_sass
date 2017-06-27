@@ -1,0 +1,3 @@
+#! /bin/bash
+. $DEVTOOLS/bin/setupdt.sh
+dart-sass $1 > `dirname $1`/`basename $1 .scss`.css

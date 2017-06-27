@@ -1,0 +1,382 @@
+/* Copyright (c) 2017, Rick Berger. All rights reserved. Use of this source code
+   is governed by a BSD-style license that can be found in the LICENSE file. */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Material+Icons);
+:root {
+  --mdc-theme-primary: #212121;
+  --mdc-theme-accent: #64DD17;
+}
+
+body {
+  margin: 0;
+  font-family: "Pontano Sans", Helvetica, Arial, sans-serif;
+}
+
+.tinytron {
+  background-color: lightgray;
+}
+
+.tinytron .display-3 {
+  font-size: 2rem;
+}
+
+.tinytron .display-4 {
+  font-size: 1.5rem;
+}
+
+.noscroll {
+  overflow: hidden;
+  position: fixed;
+}
+
+.container-fluid, .container-fluid h5 {
+  font-family: "Pontano Sans", "Arial Grande", sans-serif;
+  margin-top: 0.1em;
+}
+
+.jumbotron {
+  font-weight: 100;
+  margin-bottom: 0;
+}
+
+.container-fluid h5 {
+  font-weight: 300;
+}
+
+.col {
+  text-align: center;
+}
+
+.chart-cell {
+  border: thin solid black;
+  clear: both;
+}
+
+.chart-col {
+  text-align: center;
+}
+
+.chart-launch-button,
+.chart-help-button {
+  color: gray;
+  float: right;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.chart-launch-button:hover,
+.chart-help-button:hover {
+  color: #4682B4;
+}
+
+.jumbotron .subtitlediv {
+  float: right;
+}
+
+.jumbotron .subtitlediv .subtitle {
+  position: relative;
+  left: 0;
+  top: 20px;
+  color: #666;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.chart-cell .info-box {
+  fill: #444;
+}
+
+.chart-cell .info-box-content {
+  fill: #ccc;
+}
+
+.about {
+  font-family: "Pontano Sans", Arial, sans-serif;
+  font-weight: 300;
+  color: #444;
+  padding-top: 0;
+}
+.about h2, .about h4 {
+  text-decoration: underline;
+  color: #666;
+}
+.about h2 {
+  font-size: 1.5rem;
+}
+.about h4 {
+  font-size: 1.3rem;
+}
+.about p, .about li {
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin-left: 4em;
+  color: #666;
+  font-weight: 200;
+}
+@media only screen and (max-width: 992px) {
+  .about p, .about li {
+    margin-left: 0;
+  }
+}
+.about h1, .about h3 {
+  font-weight: 200;
+}
+.about .about-header {
+  background: #444;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em;
+  margin-bottom: 3em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+  border-radius: 10px;
+}
+
+/***************************************************
+ * beg barchart css
+ ***************************************************/
+.barchart .bar {
+  fill: steelblue;
+}
+
+.barchart .bar-text {
+  text-anchor: middle;
+  visibility: hidden;
+}
+
+.barchart .bar-hover {
+  fill: brown;
+}
+
+.barchart .axis {
+  font: 10px sans-serif;
+}
+
+.barchart .axis path,
+.barchart .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.barchart .x.axis path {
+  display: none;
+}
+
+/***************************************************
+ * end barchart css
+ * beg bundle css
+ ***************************************************/
+.bundle-chart .node {
+  font: 300 11px "Pontano Sans", Helvetica, Arial, sans-serif;
+  fill: #bbb;
+}
+
+.bundle-chart .node:hover {
+  fill: #000;
+}
+
+.bundle-chart .link {
+  stroke: steelblue;
+  stroke-opacity: 0.4;
+  fill: none;
+  pointer-events: none;
+}
+
+.bundle-chart .node:hover,
+.bundle-chart .node--source,
+.bundle-chart .node--target {
+  font-weight: 700;
+}
+
+.bundle-chart .node--source {
+  fill: #2ca02c;
+}
+
+.bundle-chart .node--target {
+  fill: #d62728;
+}
+
+.bundle-chart .link--source,
+.bundle-chart .link--target {
+  stroke-opacity: 1;
+  stroke-width: 2px;
+}
+
+.bundle-chart .link--source {
+  stroke: #d62728;
+}
+
+.bundle-chart .link--target {
+  stroke: #2ca02c;
+}
+
+/***************************************************
+ * end bundle css
+ * beg chord css
+ ***************************************************/
+.chord-chart .chord {
+  fill-opacity: 0.67;
+}
+
+/***************************************************
+ * end chord css
+ * beg collapsible.css
+ ***************************************************/
+.collapsible-chart .node {
+  cursor: pointer;
+}
+
+.collapsible-chart .node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.collapsible-chart .node text {
+  font: 10px sans-serif;
+}
+
+.collapsible-chart .link {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+/***************************************************
+ * end collapsible.css
+ * beg draggable.css
+ ***************************************************/
+.draggable-chart .node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.draggable-chart .node .selected {
+  stroke: red;
+}
+
+.draggable-chart .link {
+  stroke: #999;
+}
+
+.draggable-chart .brush .extent {
+  fill-opacity: 0.1;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+
+/***************************************************
+ * end draggable.css
+ * beg force.css
+ ***************************************************/
+.force-chart .node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.force-chart .link {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.force-chart .text-box {
+  fill: black;
+}
+
+.force-chart .hovered-text {
+  fill: #ccc;
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+.force-chart .selected-circle {
+  fill: red;
+  stroke: black;
+  stroke-width: 3;
+}
+
+/***************************************************
+ * end force.css
+ * beg map1.css
+ ***************************************************/
+.map1-chart svg {
+  background: #eee;
+}
+
+.map1-chart .sphere {
+  fill: #040;
+}
+
+.map1-chart .land {
+  fill: #fff;
+}
+
+.map1-chart .boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.map1-chart .overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+/***************************************************
+ * end map1.css
+ * beg panzoom.css
+ ***************************************************/
+.panzoom-chart {
+  position: relative;
+}
+
+.panzoom-chart svg {
+  font: 10px sans-serif;
+  shape-rendering: crispEdges;
+}
+
+.panzoom-chart rect {
+  fill: #ddd;
+}
+
+.panzoom-chart .axis path,
+.panzoom-chart .axis line {
+  fill: none;
+  stroke: #fff;
+}
+
+.panzoom-chart .buttons {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+/***************************************************
+ * end panzoom.css
+ * beg point_along_path.css
+ ***************************************************/
+.point-along-path-chart path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3px;
+}
+
+.point-along-path-chart circle {
+  fill: steelblue;
+  stroke: #fff;
+  stroke-width: 3px;
+}
+
+/***************************************************
+ * end point_along_path.css
+ * beg stroke_dash_interp.css
+ ***************************************************/
+.stroke-dash-interp-chart path {
+  fill: none;
+  stroke: red;
+  stroke-width: 3px;
+}

@@ -1,0 +1,40 @@
+name: dartd3_demos
+description: Set of Initially Ported D3 Demos for Dart
+version: 0.1.0
+#homepage: aphorica.com
+#author: Rick Berger <gbergeraph@gmail.com>
+
+environment:
+  sdk: '>=1.20.1 <2.0.0'
+
+dependencies:
+  angular2: 3.0.0
+  angular_components:
+    path: /shared/devtools/angular_components.dart
+  ng_bootstrap: any
+  rxdart: ^0.10.2
+  quiver: ^0.25.0
+  markdown: ^0.11.3
+  d3:
+    path: /shared/devtools/d3.dart
+  dartd3tooltips:
+    path: /shared/dev/web/dartd3tooltips
+  aphorica_dartutils:
+    path: /shared/dev/web/aphorica_dartutils
+
+dev_dependencies:
+  browser: ^0.10.0
+  dart_to_js_script_rewriter: ^1.0.1
+
+executables:
+  buildit:
+    path: ./buildit
+
+transformers:
+- angular2:
+    platform_directives:
+    - 'package:angular2/common.dart#COMMON_DIRECTIVES'
+    platform_pipes:
+    - 'package:angular2/common.dart#COMMON_PIPES'
+    entry_points: web/main.dart
+- dart_to_js_script_rewriter

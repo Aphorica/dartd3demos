@@ -1,0 +1,27 @@
+.side-panel {
+  width:250px;
+  height:100%;
+  padding:0;
+  position:fixed;
+  top: 0;
+  left: -250px;
+  background: rgba(65, 65, 65, 0.95);
+  color:white;
+  height: 10000px;
+  transform: translateX(0);
+  transition: .3s ease all;
+}
+
+.side-panel.show-nav {
+  transform: translateX(250px);
+}
+
+.sidepanel-close-icon {
+  position:relative;
+  top: 0px;
+  left: 225px;
+  cursor: pointer;
+  color:#ccc;
+}
+
+.sidepanel-close-icon:hover { color: white; }

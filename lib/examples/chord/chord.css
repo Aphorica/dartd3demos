@@ -1,0 +1,7 @@
+#chord-chart {
+  font: 10px sans-serif;
+}
+
+#chord-chart .chord {
+  fill-opacity: .67;
+}

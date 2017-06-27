@@ -1,0 +1,32 @@
+<div class="grid-ctnr container-fluid">
+    <div class="example-grid">
+        <div class="row">
+            <div *ngFor="let chartInfo of chartList; let ix=index; "
+                class="chart-col col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                <i *ngIf="!chartInfo.title.isEmpty"
+                   class="chart-help-button material-icons md-18"
+                   (click)="showHelp(ix)"
+                   (mouseout)="onChartHelpBtnMouseOut()"
+                   (mouseover)="onChartHelpBtnMouseOver(ix)">
+                    <glyph icon="{{chartHelpBtn(ix)}}"
+                           materialTooltip="Click for help...">
+                    </glyph>
+                </i>
+                <i *ngIf="!chartInfo.title.isEmpty && responsivePolicy.gridChartsLive"
+                   class="chart-launch-button material-icons md-18"
+                   (click)="launchChartLightbox(ix)">
+                    <glyph icon="launch"
+                           materialTooltip="Click to view in lightbox...">
+                    </glyph>
+                </i>
+                <div class="chart-box">
+                    <chart [allowInteraction]="responsivePolicy.gridChartsLive" 
+                           [parentSelector]="'.chart-col .chart-box'"
+                           [chartInfo]="chartInfo" ></chart>
+                </div>
+                <h5>{{chartInfo.title}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<side-panel #sidePanel></side-panel>

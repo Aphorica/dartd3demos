@@ -1,0 +1,14 @@
+#! /bin/bash
+. $DEVTOOLS/bin/setupdt.sh
+
+REGEX='^\.\/\..*$'
+
+for SCSS in `find . -name '*.scss'`;
+do
+
+  if [[ $SCSS =~ $REGEX ]]; then
+    continue
+  fi
+
+  dart-sass $SCSS > `dirname $SCSS`/`basename $SCSS .scss`.css
+done

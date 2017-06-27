@@ -1,0 +1,46 @@
+<!-- ugh!  MD navbars aren't implemented for Dart, yet.  Do our own for now. -->
+<nav class="aph-navbar">
+    <div class="aph-navgroup-left">
+        <span class="aph-navitem"><a href="https://aphorica.com" target="_blank">Aphorica Inc</a></span>
+    </div>
+    <div class="aph-navspanner"></div>
+    <div *ngIf="responsivePolicy.isDesktopMenu" class="aph-navgroup-right">
+        <span class="aph-navitem aph-action" (click)="onHomeClicked()">Home</span>
+        <span class="aph-navitem aph-action" (click)="onAboutClicked()">About</span>
+    </div>
+    <div *ngIf="responsivePolicy.isMobileMenu" class="aph-navgroup-right">
+        <span class="aph-navitem aph-action" (click)="onHomeClicked()">
+            <glyph icon="home"></glyph></span>
+        <span class="aph-navitem aph-action" (click)="onAboutClicked()">
+            <glyph icon="info"></glyph></span>
+    </div>
+</nav>
+<div [class.jumbotron]="responsivePolicy.isDesktopRes"
+     [class.tinytron]="responsivePolicy.isMobileRes">
+    <div class="container-fluid">
+    <h1 class="display-3">D3 Examples</h1>
+    <div *ngIf="responsivePolicy.isDesktopRes" class="subtitlediv">
+        <div style="height:100%">&nbsp;</div>
+        <div class="subtitle">Rick Berger, Aphorica Inc (<a href="mailto:rickb@aphorica.com">rickb@aphorica.com</a>)</div>
+    </div>
+    <h4 class="display-4">In Dart/Angular2</h4>
+    <hr style="clear:both" />
+    <div *ngIf="responsivePolicy.isDesktopRes">
+        <p class="lead">
+            This app contains the <a href="https://github.com/rwl/d3.dart" target="_blank">
+            D3 examples</a> initially ported to Dart by 
+            <a href="https://github.com/rwl" target="_blank">Richard Lincoln</a>.
+            All of the panels are 'live', to the extent they support
+            interaction/animation.  Click on an expand icon (
+            <span style="color:gray;"><glyph icon="launch"></glyph></span>&nbsp;) to see that
+            example in a lightbox, or a help icon (
+            <span style="color:gray"><glyph icon="help_outline"></glyph></span>&nbsp;)
+            to view help in a side panel on that example.</p>
+        <p class="lead">
+            The code may be found on github (post a location.)
+        </p>
+    </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
+<light-box #lightBox [hidden]="!lightBox.show"></light-box>

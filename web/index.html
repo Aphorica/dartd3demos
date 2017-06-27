@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Pragma" content="no-cache">
+    <base href="/"/>
+    <title>Dart D3 Initially Ported Demo Collection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="main.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="packages/ng_bootstrap/all.css">
+    <link rel="stylesheet" href="packages/font_awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="mdc-typography">
+    <my-app>
+      <div id="splash" style="width:100%;height:100%; 
+                  background:red; color:steelblue">
+         <div id="splash-content-wrapper" style="position:absolute;text-align:center;">
+           <span style="font-size:100px;color:steelblue"
+                 class="splash fa fa-circle-o-notch fa-spin"></span><br/>
+           <span style="font-size:20px">Loading</span>
+         </div>
+      </div>
+    </my-app>
+
+    <script type="text/javascript">
+       (function(evt) {
+          var splashContentDiv = document.getElementById('splash-content-wrapper');
+          var newLeft = Math.round((window.innerWidth - splashContentDiv.clientWidth) / 2);
+          var newTop = Math.round((window.innerHeight - splashContentDiv.clientHeight) / 2);
+          splashContentDiv.style.left = newLeft + 'px';
+          splashContentDiv.style.top = newTop + 'px';
+       }());
+    </script>
+    <script src="packages/d3/d3.min.js" charset="utf-8"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>
