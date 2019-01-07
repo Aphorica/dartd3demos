@@ -1,5 +1,5 @@
 # Dart Angular/D3 Demo
-### Rick Berger, Aphorica Inc ( [rickb@aphorica.com](mailto:rickb@aphorica.com) )
+### Rick Berger, Aphorica Inc ( [gbergeraph@gmail.com](mailto:gbergeraph@gmail.com) )
 ----
 This demo contains the set of d3 demos initially ported
 by Richard Lincoln in his port of d3 to dart.
